@@ -167,6 +167,7 @@
     margin-right: 40px;
 }
 
+
 .input__wrapper {
     display: flex;
     align-items: center;
@@ -213,6 +214,11 @@
     margin-right: 12px;
 }
 
+.wallet__card__content img {
+    max-width: 100%;
+    height: auto;
+}
+
 .wallet__card {
     border-width: 2px;
     border-style: solid;
@@ -245,6 +251,7 @@
 }
 
 .card__wrapper {
+    margin-top: 24px;
     width: 100%;
     padding: 24px 28px;
     border-width: 2px;
@@ -288,4 +295,113 @@
     font-size: 16px;
 
     color: rgba(255, 255, 255, 0.56);
+}
+
+@media only screen and (max-width: 1500px) {
+    .body__header h1 {
+        font-size: 50px;
+    }
+
+    .wallet__card__content h4 {
+        font-size: 80px;
+    }
+}
+
+@media only screen and (max-width: 1330px) {
+    .body__header h1 {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .cards__union {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+.card__wrapper{
+    width: auto;
+
+}
+    .card__wrapper:nth-child(1){margin-right: unset;}
+    .body__header {
+        flex-direction: column;
+    }
+
+    .body__header h1 {
+        margin: unset;
+    }
+
+    .input__wrapper {
+        width: 291px;
+        margin-top: 20px;
+    }
+
+    .wallet__card__content {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .wallet__card__content h4 {
+        font-size: 50px;
+        /*padding-left: 28px;*/
+        margin: 20px 35px ;
+    }
+
+    .wallet__card__content h4 span {
+        font-size: 22px;
+    }
+
+    .card__wrapper__amount h5 {
+        font-size: 34px;
+    }
+
+    .card__wrapper__amount p {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    nav{
+        display: none;
+    }
+
+    .body__wrapper {margin: 0 30px}
+}
+@media only screen and (max-width: 550px) {
+    .body__header h1 {
+        font-size: 30px;
+    }
+    .input__wrapper, .action__btn {
+        font-size: 16px;
+    }
+    .card__title {
+        font-size: 24px;
+    }
+    .wallet__card__content h4 {
+        font-size: 35px;
+    }
+    .card__wrapper__amount h5 {
+        font-size: 30px;
+    }
+    .price {
+        font-size: 14px;}
+    .card__wrapper__amount {
+
+        margin: 20px 0;
+    }
+    .input__wrapper {
+        width: 250px;}
+}
+
+@media only screen and (max-width: 400px) {
+    .staked__buttons{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .input__wrapper {
+        width: 220px;
+    }
+    .staked__buttons button{
+        margin: 10px 0;
+    }
 }

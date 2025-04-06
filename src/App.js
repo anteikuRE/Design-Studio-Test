@@ -41,7 +41,7 @@ function App() {
                         <h4>787,000 <span>OMIRA</span></h4>
                     </div>
                 </div>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <div className={'cards__union'} style={{display: 'flex', justifyContent: 'space-between'}}>
                     <Card price={'$500.56'} buttonType={'Staked'} title={'Staked Balance'}>26,870</Card>
 
                     <Card buttonType={'Unclaimed'} title={'Unclaimed Rewards'}>1,500.56</Card>
@@ -68,7 +68,7 @@ function Card({children, title, buttonType, price}) {
                 </div>
             </div>
             {buttonType === 'Staked' ?
-                <div style={{display: 'flex'}}><Button styling={{marginRight: '10px'}}>Withdraw</Button>
+                <div className={'staked__buttons'} style={{display: 'flex'}}><Button styling={{marginRight: '10px'}}>Withdraw</Button>
                     <Button black={true}>Deposit</Button></div>
                 : buttonType === 'Unclaimed' ?
                     <Button noArrow={true} styling={{padding: '12px 78px'}}>Claim</Button> : ''}
