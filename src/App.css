@@ -1,38 +1,291 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayXThin.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayXThinItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayLightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayRoman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayRomanItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayBoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay';
+    src: url('./fonts/NeueHaasDisplayBlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+.app {
+    font-family: "NeueHaasDisplay", sans-serif;
+    background: url('img/Union.svg') top left no-repeat,
+    url('img/smokeBackground.png') bottom / cover no-repeat,
+    url('img/span.png') bottom repeat,
+    black;
+    font-style: normal;
+}
+
+.app__header {
+    padding: 17px 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 137px;
+}
+
+.app__header nav a {
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    margin: 40px;
+}
+
+.action__btn {
+    background: #fff;
+    padding: 14px 18px;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: unset;
+}
+
+.action__btn img {
+    margin-left: 14px
+}
+
+.black {
+    background: black;
+    color: #ffffff;
+    border: 2px solid #303030;
+}
+
+.body__wrapper {
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 190px;
+}
+
+.body__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.body__header h1 {
+    font-weight: 500;
+    font-size: 64px;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.95);
+    margin: unset;
+    margin-right: 40px;
+}
+
+.input__wrapper {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: 2px solid #303030;
+    padding: 6px 23px;
+    font-size: 20px;
+    color: #fff;
+    max-width: 291px;
+}
+
+.input__wrapper:nth-child(1) {
+    margin-right: 13px;
+
+}
+
+.input__wrapper input {
+    text-align: right;
+    background: none;
+    border: unset;
+    font-size: 20px;
+    color: #fff;
+    max-width: 114px;
+    margin-left: 24px;
+}
+
+.input__wrapper input:focus-visible {
+    outline: none;
+}
+
+.card__title {
+    padding-top: 36px;
+    margin: unset;
+
+    font-weight: 500;
+    font-size: 32px;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.card__title svg {
+    margin-right: 12px;
+}
+
+.wallet__card {
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(
+            to top,
+            #303030,
+            rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)
+    ) 1 1%;
+    backdrop-filter: blur(15px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.07) 30%, rgba(113, 113, 113, 0.07) 100%);
+}
+
+.wallet__card__content span {
+
+    font-size: 49px;
+    font-weight: 400;
+}
+
+.wallet__card__content h4 {
+    margin: unset;
+    padding-right: 28px;
+}
+
+.wallet__card__content {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500;
+    font-size: 112px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.card__wrapper {
+    width: 100%;
+    padding: 24px 28px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(
+            to top,
+            #303030,
+            rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)
+    ) 1 1%;
+    backdrop-filter: blur(15px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.07) 30%, rgba(113, 113, 113, 0.07) 100%);
+}
+
+.card__wrapper:nth-child(1) {
+    margin-right: 32px;
+}
+
+.card__wrapper__amount {
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    margin: 54px 0;
+}
+
+.card__wrapper__amount h5 {
+    margin: unset;
+    font-weight: 500;
+    font-size: 64px;
+
+    display: flex;
+    align-items: baseline;
+}
+
+.card__wrapper__amount p {
+    margin: unset;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.price {
+
+    font-size: 16px;
+
+    color: rgba(255, 255, 255, 0.56);
 }
