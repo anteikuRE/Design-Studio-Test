@@ -7,45 +7,83 @@ import whiteArrow from './img/whiteArrow.svg'
 import blackArrow from './img/blackArrow.svg'
 import car from './img/car.png'
 import cardTitleIcon from './img/cardTitleIcon.svg'
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
+import {useEffect} from "react";
+
+const FadeInBlock = ({children}) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({triggerOnce: true, threshold: 0.1});
+
+    useEffect(() => {
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                filter: "blur(0px)",
+                transition: {duration: 1.4, ease: "easeIn"},
+            });
+        }
+    }, [inView, controls]);
+
+    return (
+        <motion.div
+            ref={ref}
+            initial={{opacity: 0, filter: "blur(10px)"}}
+            animate={controls}
+        >
+            {children}
+        </motion.div>
+    );
+};
 
 function App() {
     return (
+
         <div className="app">
-            <header className="app__header">
-                <div className="header__logo">
-                    <img src={logo} alt=""/>
-                </div>
-                <nav>
-                    <a href="/#">Home</a>
-                    <img src={Vector} alt=""/>
-                    <a href="/#">B.B4</a>
-                    <img src={Vector} alt=""/>
-                    <a href="/#">0.07</a>
-                    <img src={Vector} alt=""/>
-                    <a href="/#">Token</a>
-                </nav>
-                <Button up={true}>General Bonding</Button>
 
-            </header>
 
-            <div className="body__wrapper">
-                <div className="body__header"><h1>General Bonding Pool</h1>
-                    <Input placeholder={'XX.XX'} indicator={'APY'}>%</Input>
-                    <Input green={true} placeholder={'XXXXXX.XX'} indicator={'TVL'}>$</Input>
-                </div>
-                <div className="wallet__card ">
-                    <CardTitle styling={{paddingLeft: '28px', borderTop: '2px solid #303030'}}>Your Wallet
-                        Balance</CardTitle>
-                    <div className={'wallet__card__content'}>
-                        <img src={car} alt=""/>
-                        <h4>787,000 <span>OMIRA</span></h4>
+            <FadeInBlock>
+                <header className="app__header">
+                    <div className="header__logo">
+                        <img src={logo} alt=""/>
                     </div>
-                </div>
-                <div className={'cards__union'} style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <Card price={'$500.56'} buttonType={'Staked'} title={'Staked Balance'}>26,870</Card>
+                    <nav>
+                        <a href="/#">Home</a>
+                        <img src={Vector} alt=""/>
+                        <a href="/#">B.B4</a>
+                        <img src={Vector} alt=""/>
+                        <a href="/#">0.07</a>
+                        <img src={Vector} alt=""/>
+                        <a href="/#">Token</a>
+                    </nav>
+                    <Button up={true}>General Bonding</Button>
 
-                    <Card buttonType={'Unclaimed'} title={'Unclaimed Rewards'}>1,500.56</Card>
-                </div>
+                </header>
+            </FadeInBlock>
+            <div className="body__wrapper">
+                <FadeInBlock>
+                    <div className="body__header"><h1>General Bonding Pool</h1>
+                        <Input placeholder={'XX.XX'} indicator={'APY'}>%</Input>
+                        <Input green={true} placeholder={'XXXXXX.XX'} indicator={'TVL'}>$</Input>
+                    </div>
+                </FadeInBlock>
+                <FadeInBlock>
+                    <div className="wallet__card ">
+                        <CardTitle styling={{paddingLeft: '28px', borderTop: '2px solid #303030'}}>Your Wallet
+                            Balance</CardTitle>
+                        <div className={'wallet__card__content'}>
+                            <img loading="lazy"  src={car} alt=""/>
+                            <h4>787,000 <span>OMIRA</span></h4>
+                        </div>
+                    </div>
+                </FadeInBlock>
+                <FadeInBlock>
+                    <div className={'cards__union'} style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <Card price={'$500.56'} buttonType={'Staked'} title={'Staked Balance'}>26,870</Card>
+
+                        <Card buttonType={'Unclaimed'} title={'Unclaimed Rewards'}>1,500.56</Card>
+                    </div>
+                </FadeInBlock>
             </div>
 
         </div>
@@ -68,7 +106,8 @@ function Card({children, title, buttonType, price}) {
                 </div>
             </div>
             {buttonType === 'Staked' ?
-                <div className={'staked__buttons'} style={{display: 'flex'}}><Button styling={{marginRight: '10px'}}>Withdraw</Button>
+                <div className={'staked__buttons'} style={{display: 'flex'}}><Button
+                    styling={{marginRight: '10px'}}>Withdraw</Button>
                     <Button black={true}>Deposit</Button></div>
                 : buttonType === 'Unclaimed' ?
                     <Button noArrow={true} styling={{padding: '12px 78px'}}>Claim</Button> : ''}
