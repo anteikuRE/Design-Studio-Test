@@ -16,13 +16,13 @@ function App() {
                     <img src={logo} alt=""/>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="/#">Home</a>
                     <img src={Vector} alt=""/>
-                    <a href="#">B.B4</a>
+                    <a href="/#">B.B4</a>
                     <img src={Vector} alt=""/>
-                    <a href="#">0.07</a>
+                    <a href="/#">0.07</a>
                     <img src={Vector} alt=""/>
-                    <a href="#">Token</a>
+                    <a href="/#">Token</a>
                 </nav>
                 <Button up={true}>General Bonding</Button>
 
